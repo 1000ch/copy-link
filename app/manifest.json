@@ -6,17 +6,13 @@
   "description": "Chrome Extension that enables you to copy the current page title and url easily.",
   "author": "1000ch",
   "permissions": [
-    "background",
+    "tabs",
     "clipboardWrite",
     "*://*/*"
   ],
   "browser_action": {
     "default_title": "Copy Link",
     "default_popup": "./popup.html"
-  },
-  "background": {
-    "scripts": ["./background.js"],
-    "persistent": true
   },
   "offline_enabled": true
 }
