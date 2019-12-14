@@ -8,8 +8,8 @@ prelogue:
 	@echo ">>> $(PROJECTNAME) build started"
 	@echo ""
 
-archive: ./src
-	@zip copy-link.zip -r ./src
+archive: ./app
+	@zip copy-link.zip -r ./app
 
 epilogue:
 	@echo ""
