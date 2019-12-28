@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  padding: 8px;
+  width: 320px;
+}
+
+div {
+  display: flex;
+}
+
+input {
+  flex-grow: 1;
+  margin: 4px 0;
+  padding: 4px;
+  font-size: 12px;
+}
+
+button {
+  margin: 4px 0;
+  padding: 4px;
+  width: 120px;
+  font-size: 12px;
+}

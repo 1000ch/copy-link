@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const text = document.querySelector('input');
+  const plainText = document.querySelector('#plain-text');
   const plain = document.querySelector('#plain');
+  const htmlText = document.querySelector('#html-text');
   const html = document.querySelector('#html');
+  const markdownText = document.querySelector('#markdown-text');
   const markdown = document.querySelector('#markdown');
 
   chrome.tabs.query({
@@ -10,21 +12,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }, tabs => {
     const { title, url } = tabs[0];
 
+    plainText.value = `${title} ${url}`;
+    htmlText.value = `<a href="${url}">${title}</a>`;
+    markdownText.value = `[${title}](${url})`;
+
     plain.addEventListener('click', () => {
-      text.value = `${title} ${url}`;
-      text.select();
+      plainText.select();
       document.execCommand('copy');
     });
 
     html.addEventListener('click', () => {
-      text.value = `<a href="${url}">${title}</a>`;
-      text.select();
+      htmlText.select();
       document.execCommand('copy');
     });
 
     markdown.addEventListener('click', () => {
-      text.value = `[${title}](${url})`;
-      text.select();
+      markdownText.select();
       document.execCommand('copy');
     });
   });
